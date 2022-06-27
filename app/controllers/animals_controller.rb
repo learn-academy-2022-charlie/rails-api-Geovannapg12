@@ -6,7 +6,7 @@ class AnimalsController < ApplicationController
 
     def show
         animal = Animal.find(params[:id])
-        render json: animal
+        render json: {animal: animal, sightings: sightings}
     end
 
     def create 
@@ -19,7 +19,7 @@ class AnimalsController < ApplicationController
     end
 
     def update 
-        animal = Animal.find(params[:id])
+        animal = Animßal.find(params[:id])
         animal.update(animal_params)
         if animal.valid?
             render json: animal
